@@ -10,31 +10,203 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/advertise_bg"
         tools:context=".MainActivity">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="328dp"
-            android:layout_height="189dp"
+            android:id="@+id/iv_image"
+            android:layout_width="221dp"
+            android:layout_height="188dp"
+            android:layout_marginTop="44dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@drawable/ic_image" />
 
         <Button
-            android:id="@+id/btn_choose_img"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
+            android:id="@+id/btn_choose"
+            android:layout_width="380dp"
+            android:layout_height="48dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
             android:text="Choose"
-            app:backgroundTint="#00897B"
+            app:backgroundTint="#29BF7F"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="42dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <Button
+            android:id="@+id/btn_preview"
+            android:layout_width="180dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:text="preview"
+            app:backgroundTint="#20FFFFFF"
+            app:icon="@drawable/ic_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_choose" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="388dp"
+            android:layout_height="213dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/info_background"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_push">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:background="@drawable/info_background">
+
+                <ImageButton
+                    android:id="@+id/iv_preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_img_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Image Name: "
+                    android:textColor="#FFFFFF"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@+id/iv_preview"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_img_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Location: "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_img_format"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_img_format"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_img_format" />
+
+                <TextView
+                    android:id="@+id/tv_img_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Size: "
+                    android:textColor="#FFFFFF"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_img_name"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_img_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_img_name" />
+
+                <TextView
+                    android:id="@+id/tv_info_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_img_size"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info_name" />
+
+                <TextView
+                    android:id="@+id/tv_info_location"
+                    android:layout_width="0dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="4dp"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_img_location"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info_format" />
+
+                <TextView
+                    android:id="@+id/tv_info_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="TextView"
+                    android:textColor="#FFFFFF"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_img_name"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_img_format"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Format: "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_img_size"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_img_size"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_img_size" />
+
+                <TextView
+                    android:id="@+id/tv_info_format"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Format: "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_img_format"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info_size" />
+
+                <TextView
+                    android:id="@+id/tv_img_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="64 x 64"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_preview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_preview" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_push"
+            android:layout_width="182dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Push"
+            android:textColor="#00796B"
+            app:backgroundTint="#FFFFFF"
+            app:icon="@drawable/ic_download"
+            app:iconTint="#388E3C"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_choose" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
